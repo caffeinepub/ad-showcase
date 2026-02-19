@@ -1,0 +1,74 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-homepage-that-displays-all-active-advertisements-in-a-grid-layout",
+      "featureTitle": "Implement a homepage that displays all active advertisements in a grid layout",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-admin-interface-to-manage-advertisements-with-forms-to-add-edit-and-delete-ads",
+      "featureTitle": "Create an admin interface to manage advertisements with forms to add, edit, and delete ads",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AccessDeniedScreen.tsx",
+        "frontend/src/components/AdForm.tsx",
+        "frontend/src/components/AdList.tsx",
+        "frontend/src/pages/AdminPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-modern-professional-visual-theme-with-clean-typography-a-cohesive-color-palette-emphasizing-trust-and-clarity-and-consistent-spacing-that-makes-advertisements-the-focal-point-while-maintaining-a-polished-brand-presence",
+      "featureTitle": "Apply a modern, professional visual theme with clean typography, a cohesive color palette emphasizing trust and clarity, and consistent spacing that makes advertisements the focal point while maintaining a polished brand presence",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/LoginButton.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

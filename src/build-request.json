@@ -1,0 +1,100 @@
+{
+  "kind": "build_request",
+  "title": "Create ad display website",
+  "projectName": "Ad Showcase",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a backend data model to store advertisements with fields: id, title, description, imageUrl, targetUrl, and isActive status",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website for showing ads"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Advertisement type is defined in Motoko with all required fields",
+        "Backend provides methods to create, retrieve, update, and delete advertisements",
+        "Only active advertisements are returned in public queries"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a homepage that displays all active advertisements in a grid layout",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website for showing ads"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage fetches and displays all active ads from the backend",
+        "Each ad shows its image, title, and description",
+        "Grid layout is responsive and works on mobile and desktop",
+        "Clicking an ad opens its target URL in a new tab"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create an admin interface to manage advertisements with forms to add, edit, and delete ads",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website for showing ads"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin page includes a form to create new advertisements",
+        "Existing ads can be edited with pre-populated form fields",
+        "Ads can be toggled active/inactive",
+        "Ads can be deleted with confirmation",
+        "All operations reflect immediately in the ad list"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a modern, professional visual theme with clean typography, a cohesive color palette emphasizing trust and clarity, and consistent spacing that makes advertisements the focal point while maintaining a polished brand presence",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visual design is consistently applied across all pages",
+        "Color scheme avoids generic blue and purple unless contextually appropriate",
+        "Typography hierarchy clearly distinguishes headings, body text, and ad content",
+        "Layout guides user attention to advertisements without overwhelming the interface"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use Motoko for backend implementation",
+    "Use React with TypeScript for frontend",
+    "Style with Tailwind CSS and Shadcn components",
+    "Authentication must use Internet Identity if needed"
+  ],
+  "nonGoals": [
+    "Payment processing for ad purchases",
+    "Analytics or impression tracking",
+    "Real-time bidding or ad auction systems",
+    "Integration with third-party ad networks"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Professional hero banner image for the homepage showing digital advertising concept with modern abstract design (hero-banner.dim_1200x400.png)",
+      "Placeholder advertisement image for demo purposes with generic product mockup (ad-placeholder.dim_600x400.png)"
+    ],
+    "edits": []
+  }
+}

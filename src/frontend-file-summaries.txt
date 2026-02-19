@@ -1,0 +1,13 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for home and admin pages with Layout wrapper.",
+  "frontend/src/components/Layout.tsx": "Layout component providing consistent header with navigation, login button, mobile menu, and footer with caffeine.ai attribution across all pages.",
+  "frontend/src/components/LoginButton.tsx": "Authentication button component using Internet Identity hook to handle login/logout with loading states and query cache clearing.",
+  "frontend/src/components/AccessDeniedScreen.tsx": "Access denied screen component displayed when unauthorized users attempt to access admin-only pages.",
+  "frontend/src/components/AdForm.tsx": "Form component for creating and editing advertisements with image upload, progress tracking, and all required fields including active status toggle.",
+  "frontend/src/components/AdList.tsx": "List component displaying advertisements with admin controls for editing, deactivating, and deleting with confirmation dialog.",
+  "frontend/src/pages/HomePage.tsx": "Homepage displaying active advertisements in a responsive grid layout with hero section and clickable ad cards that open target URLs.",
+  "frontend/src/pages/AdminPage.tsx": "Admin dashboard page with role-based access control, tabbed interface for creating and managing advertisements with toast notifications.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including fetching ads, user roles, profiles, and mutations for creating and deactivating ads.",
+  "frontend/src/index.css": "Global styles with warm amber/orange color palette emphasizing trust and clarity, using OKLCH color system for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom color tokens, Inter font family, and extended utilities for professional design system."
+}

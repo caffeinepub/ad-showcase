@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Main backend actor implementing advertisement management with role-based access control, user profiles, and blob storage integration. Provides admin-only ad creation/deactivation and public ad viewing endpoints.",
+  "feature_evidence.json": "Feature evidence report documenting three implemented features: homepage with ad grid layout, admin interface for ad management, and modern professional visual theme with trust-focused design.",
+  "frontend-file-summaries.txt": "JSON-formatted summaries of all frontend source files describing components, pages, hooks, and styling configuration.",
+  "frontend/index.css": "Tailwind CSS base styles defining custom CSS variables for light and dark themes using OKLCH color system with neutral grayscale palette.",
+  "frontend/index.html": "HTML entry point for the React application with root div and module script reference to main.tsx.",
+  "frontend/src/App.tsx": "Root application component configuring TanStack Router with routes for home and admin pages wrapped in Layout component.",
+  "frontend/src/components/AccessDeniedScreen.tsx": "Access denied page component displaying error message and return-to-home button for unauthorized admin page access attempts.",
+  "frontend/src/components/AdForm.tsx": "Form component for creating and editing advertisements with image upload, progress tracking, and all required fields including ID, title, description, target URL, and active status toggle.",
+  "frontend/src/components/AdList.tsx": "Admin list component displaying advertisements with edit, deactivate, and delete actions, including confirmation dialog for deletions.",
+  "frontend/src/components/Layout.tsx": "Main layout component with sticky header, navigation (desktop and mobile), login button, and footer. Conditionally shows admin link based on user role and authentication status.",
+  "frontend/src/components/LoginButton.tsx": "Authentication button component that handles Internet Identity login/logout with loading states. Clears query cache on logout and handles authentication errors.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that creates and manages the backend actor instance based on authentication state. Initializes access control with admin token and invalidates dependent queries when actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context provider and hook for Internet Identity authentication, managing login state, identity persistence, and AuthClient lifecycle. Provides login, logout, and status tracking functionality.",
+  "frontend/src/hooks/useQueries.ts": "Collection of React Query hooks for backend operations including fetching ads, user roles, user profiles, and mutations for creating/deactivating ads and saving profiles.",
+  "frontend/src/index.css": "Tailwind CSS configuration with custom CSS variables defining a warm amber/orange color palette for light and dark themes, plus base styles for typography and layout.",
+  "frontend/src/main.tsx": "Application entry point that sets up React Query client and Internet Identity provider, then renders the root App component.",
+  "frontend/src/pages/AdminPage.tsx": "Admin dashboard page with role-based access control, featuring tabbed interface for creating new ads and managing existing ads with activation/deactivation functionality and toast notifications.",
+  "frontend/src/pages/HomePage.tsx": "React component that displays a hero section and a grid of active advertisements fetched via useGetAllAds hook, with loading skeletons and error states.",
+  "frontend/src/utils/urlParams.ts": "Utility functions for extracting, persisting, and clearing URL parameters from both query strings and hash-based routing, with sessionStorage integration.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration with custom color tokens using OKLCH, extended typography, container queries, animations, and design system variables.",
+  "project_state.json": "Project metadata tracking implemented features (homepage grid, admin interface, visual theme), pending feature requests (backend data model), and image requirements for the ad showcase website."
+}

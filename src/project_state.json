@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A website for displaying advertisements",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Professional hero banner image for the homepage showing digital advertising concept with modern abstract design (hero-banner.dim_1200x400.png)\n- Placeholder advertisement image for demo purposes with generic product mockup (ad-placeholder.dim_600x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-homepage-that-displays-all-active-advertisements-in-a-grid-layout",
+      "title": "Implement a homepage that displays all active advertisements in a grid layout",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-interface-to-manage-advertisements-with-forms-to-add-edit-and-delete-ads",
+      "title": "Create an admin interface to manage advertisements with forms to add, edit, and delete ads",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-modern-professional-visual-theme-with-clean-typography-a-cohesive-color-palette-emphasizing-trust-and-clarity-and-consistent-spacing-that-makes-advertisements-the-focal-point-while-maintaining-a-polished-brand-presence",
+      "title": "Apply a modern, professional visual theme with clean typography, a cohesive color palette emphasizing trust and clarity, and consistent spacing that makes advertisements the focal point while maintaining a polished brand presence",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website for showing ads",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create a backend data model to store advertisements with fields: id, title, description, imageUrl, targetUrl, and isActive status",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Ad Showcase",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,119 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Ad Showcase - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-2",
+      "summary": "Implement homepage displaying active advertisements in responsive grid layout",
+      "acceptanceCriteria": [
+        "Homepage fetches and displays all active ads from the backend",
+        "Each ad shows its image, title, and description",
+        "Grid layout is responsive and works on mobile and desktop",
+        "Clicking an ad opens its target URL in a new tab"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useGetAllAds.ts",
+          "operation": "create",
+          "description": "Create React Query hook to fetch all active advertisements from the backend using actor.getAllAds(). Handle loading and error states appropriately."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create homepage component that uses useGetAllAds hook to fetch and display advertisements in a responsive grid layout. Each ad card should display the ad image using ExternalBlob.getDirectURL(), title, description, and be clickable to open targetUrl in a new tab. Wire in the generated images from frontend/public/assets/generated/hero-banner.dim_1200x400.png and frontend/public/assets/generated/ad-placeholder.dim_600x400.png as static assets. Use Tailwind CSS for responsive grid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3). Display loading states and handle empty/error states gracefully."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire HomePage component into the router as the default route ('/') so users can access the advertisement grid when visiting the site."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create admin interface for advertisement management with create, edit, delete, and toggle active capabilities",
+      "acceptanceCriteria": [
+        "Admin page includes a form to create new advertisements",
+        "Existing ads can be edited with pre-populated form fields",
+        "Ads can be toggled active/inactive",
+        "Ads can be deleted with confirmation",
+        "All operations reflect immediately in the ad list"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCreateAd.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for creating advertisements. Use the blob-storage component to handle image uploads with ExternalBlob.fromBytes() and withUploadProgress() for progress tracking. Call actor.createAd() with the ad data including the uploaded image ExternalBlob. Verify the component's usage instructions before implementing. Invalidate 'allAds' query on success."
+        },
+        {
+          "path": "frontend/src/hooks/useDeactivateAd.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for deactivating advertisements. Call actor.deactivateAd() with the ad id. Invalidate 'allAds' query on success."
+        },
+        {
+          "path": "frontend/src/components/AdForm.tsx",
+          "operation": "create",
+          "description": "Create form component for creating/editing advertisements with fields: title (text input), description (textarea), image (file upload with preview using ExternalBlob.getDirectURL()), targetUrl (text input), and isActive toggle. Use the blob-storage component to handle image file selection and upload progress display. Verify the component's usage instructions before implementing. Support both create and edit modes via props. Use shadcn/ui form components (Input, Textarea, Button) and Tailwind CSS for styling."
+        },
+        {
+          "path": "frontend/src/components/AdList.tsx",
+          "operation": "create",
+          "description": "Create component to display list of advertisements with admin controls. Show ad image (using ExternalBlob.getDirectURL()), title, description, active status, and action buttons (edit, delete, toggle active). Use shadcn/ui Button and Card components. Include confirmation dialog for delete action using shadcn/ui AlertDialog. Handle empty state when no ads exist."
+        },
+        {
+          "path": "frontend/src/pages/AdminPage.tsx",
+          "operation": "create",
+          "description": "Create admin page that combines AdForm and AdList components. Use the authorization component to restrict access to admin users only by checking isCallerAdmin() or getCallerUserRole(). Display AccessDeniedScreen when unauthorized. Verify the component's usage instructions before implementing. Show loading state while checking authorization. Use Tailwind CSS for layout with proper spacing."
+        },
+        {
+          "path": "frontend/src/components/AccessDeniedScreen.tsx",
+          "operation": "create",
+          "description": "Create component to display when unauthorized users attempt to access admin features. Use the authorization component to enforce role-based access control. Verify the component's usage instructions before implementing. Show clear message explaining access is restricted to administrators. Use Tailwind CSS for centered layout with appropriate styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire AdminPage component into the router at route '/admin'. Add navigation link to admin page in the app header/navigation for authenticated admin users. Ensure the route is protected and shows AccessDeniedScreen for non-admin users."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply modern professional visual theme emphasizing trust, clarity, and advertisements as focal points",
+      "acceptanceCriteria": [
+        "Visual design is consistently applied across all pages",
+        "Color scheme avoids generic blue and purple unless contextually appropriate",
+        "Typography hierarchy clearly distinguishes headings, body text, and ad content",
+        "Layout guides user attention to advertisements without overwhelming the interface"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles with a professional color palette emphasizing trust and clarity (consider warm neutrals, soft grays, and accent colors like teal or amber rather than generic blue/purple). Define CSS custom properties for consistent theming. Establish clear typography hierarchy for headings, body text, and ad content with appropriate font weights and sizes. Ensure consistent spacing using Tailwind spacing scale."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Configure Tailwind theme to match the professional visual design. Extend color palette with custom brand colors that emphasize trust and clarity. Configure typography plugin for clear hierarchy. Set up spacing, border-radius, and shadow utilities to create cohesive, polished appearance. Ensure design makes advertisements the focal point while maintaining clean brand presence."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create layout component that wraps all pages with consistent header, navigation, and footer. Use the authorization component for conditional rendering of login/logout and admin navigation based on user authentication and role. Verify the component's usage instructions before implementing. Apply professional branding with the hero banner image from frontend/public/assets/generated/hero-banner.dim_1200x400.png on appropriate pages. Use Tailwind CSS for consistent spacing and responsive design. Include LoginButton component in header."
+        },
+        {
+          "path": "frontend/src/components/LoginButton.tsx",
+          "operation": "create",
+          "description": "Create login/logout button component using the authorization component's Internet Identity integration. Use useInternetIdentity hook for authentication state and login/logout actions. Clear query cache on logout. Handle login errors gracefully. Use Tailwind CSS for button styling consistent with the professional theme. Display loading state during authentication."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with Layout component to ensure consistent visual theme and navigation across all pages. Ensure Layout provides unified branding and user experience."
+        }
+      ]
+    }
+  ]
+}
